@@ -1,0 +1,189 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 400px;
+    background-color: #eef6ef; /* Light mode background */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative; /* Important for positioning the circle */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+  
+  /* Dark Mode Styles */
+  .dark .sidebar{
+    width: 250px;
+    height: 400px;
+     /* Light mode background */
+     background-color: #121212;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative; /* Important for positioning the circle */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    
+  }
+  
+  /* Logo Styling */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+    margin-bottom: 30px;
+  }
+  
+  /* Dark Mode Logo */
+  .sidebar.dark .logo {
+    color: #81c784; /* Lighter green for dark mode */
+  }
+  
+  /* Sidebar Container */
+  .sidebar-box {
+    background-color: white; /* Light mode box background */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    width: 100%; /* Make the boxes take up full width */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+ .dark .sidebar-box {
+    background-color: #242424; /* Light mode box background */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    width: 100%; /* Make the boxes take up full width */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dark Mode Sidebar Container */
+  .dark .sidebar-box {
+    background-color: #2C2C2C; /* Dark mode box background */
+    color: white;
+  }
+  
+  /* Styling for All Tasks section */
+  .sidebar-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Dark Mode All Tasks */
+  .sidebar.dark .sidebar-box h3 {
+    color: #d4d4d4; /* Muted text color for dark mode */
+  }
+  
+  /* Styling for the list in the All Tasks section */
+  .sidebar-box ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-box ul li {
+    padding: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover effect for list items */
+  .sidebar-box ul li:hover {
+    background-color: #eef6ef; /* Light mode hover background */
+    border-radius: 8px;
+    color: green;
+  }
+  
+  /* Dark Mode List Items */
+  .sidebar.dark .sidebar-box ul li:hover {
+    background-color: #555; /* Dark mode hover background */
+    color: #a5d6a7; /* Lighter green for hover */
+  }
+  
+  /* Round shape at the center of the sidebar */
+  .circle {
+    width: 80px; /* Diameter of the circle */
+    height: 80px; /* Diameter of the circle */
+    background-color: #4caf50; /* Green color for the circle */
+    border-radius: 50%; /* Makes the element circular */
+    display: flex; /* To center the image inside the circle */
+    justify-content: center; /* Horizontal centering of the image */
+    align-items: center; /* Vertical centering of the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  }
+  
+  /* Dark Mode Circle */
+  .sidebar.dark .circle {
+    background-color: #81c784; /* Lighter green for dark mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow in dark mode */
+  }
+  
+  /* Circle image styling */
+  .circle-image {
+    width: 60%; /* Size of the image inside the circle */
+    height: 60%; /* Size of the image inside the circle */
+    border-radius: 50%; /* Makes the image circular */
+    margin-top: 60%;
+    object-fit: cover;
+  }
+  
+  /* Dark Mode Circle Image */
+  .sidebar.dark .circle-image {
+    border: 2px solid #4caf50; /* Optional: Green border for dark mode */
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px; /* Reduce sidebar width */
+      padding: 15px;
+    }
+  
+    .sidebar-box {
+      padding: 10px;
+    }
+  
+    .circle {
+      width: 60px; /* Adjust circle size */
+      height: 60px;
+    }
+  
+    .circle-image {
+      width: 50%;
+      height: 50%;
+      margin-top: 60%;
+    }
+  }
+.hello{
+    margin-left: 10px;
+}
+.sidebar-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-box ul li {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: inherit;
+  }
+  
+  .sidebar-box ul li:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light hover effect */
+  }
+  
+  .sidebar-icon {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 20px; /* Adjust icon size */
+  }
+  

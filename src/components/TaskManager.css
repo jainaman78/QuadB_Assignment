@@ -1,0 +1,487 @@
+/* Task Manager Container */
+.task-manager {
+    padding: 20px;
+    background: #ffffff;
+    height: 100%; /* Take full height */
+    width: 100%; /* Take full width of the right section */
+    box-sizing: border-box;
+  }
+  
+  /* Add Task Bar */
+  .add-task-bar {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Space between input and button */
+    background-color: #f0f5f1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 200px;
+    border: 1px solid #dcdcdc;
+  }
+  
+  /* Input field */
+  .add-task-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1; /* Input takes all available space */
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    box-sizing: border-box; /* Ensures padding is included in height */
+  }
+  
+  /* Add Task Button */
+  .add-task-bar button {
+    margin-left: 10px; /* Spacing between input and button */
+    padding: 10px 20px;
+    border: none;
+    background-color: #8bc34a;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 50px; /* Matches the height of the input box */
+  }
+  
+  /* Add Task Button Hover Effect */
+  .add-task-bar button:hover {
+    background-color: #7cb342;
+  }
+  
+  /* Task List Styling */
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task-item {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  .task-item.completed span {
+    text-decoration: line-through;
+    color: #a0a0a0;
+  }
+  
+  .task-item input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Completed Task Styling */
+  .completed-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: #f0f5f1;
+    margin: 5px 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+  }
+  
+  .completed-task span {
+    text-decoration: line-through; /* Strike-through for completed tasks */
+    color: #757575;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background-color: transparent;
+    border: none;
+    color: #d32f2f;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    color: #b71c1c;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* On small screens (mobile phones) */
+  @media (max-width: 768px) {
+    .task-manager {
+      padding: 15px;
+    }
+  
+    .add-task-bar {
+      flex-direction: column; /* Stack input and button vertically */
+      height: auto;
+      padding: 15px 10px;
+    }
+  
+    .add-task-bar input {
+      font-size: 1rem;
+      padding: 8px 12px;
+    }
+  
+    .add-task-bar button {
+      margin-top: 10px; /* Spacing between input and button */
+      width: 100%; /* Make the button full width */
+      padding: 12px;
+    }
+  
+    .task-item {
+      padding: 8px 0;
+    }
+  
+    .completed-task {
+      padding: 10px;
+    }
+  
+    .delete-btn {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* On very small screens (less than 480px) */
+  @media (max-width: 480px) {
+    .task-manager {
+      padding: 10px;
+    }
+  
+    .add-task-bar {
+      padding: 10px;
+    }
+  
+    .add-task-bar input {
+      font-size: 0.9rem;
+    }
+  
+    .add-task-bar button {
+      padding: 10px;
+    }
+  
+    .task-item {
+      padding: 5px 0;
+    }
+  
+    .completed-task {
+      padding: 8px;
+    }
+  
+    .delete-btn {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* On larger screens (tablet and above) */
+  @media (min-width: 768px) {
+    .task-manager {
+      padding: 20px;
+    }
+  
+    .add-task-bar {
+      flex-direction: row; /* Keep input and button side by side */
+    }
+  
+    .add-task-bar input {
+      font-size: 1.2rem;
+    }
+  
+    .add-task-bar button {
+      width: auto;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* General Styles */
+.add-task-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .icons-wrapper {
+    display: flex;
+    align-items: center; /* Align icons vertically centered */
+    gap: 10px; /* Space between icons */
+    position: absolute;
+    bottom: 10px; /* Adjust position to the left-bottom corner */
+    left: 10px; /* Adjust horizontal positioning */
+  }
+  
+  .icons-wrapper .icon {
+    font-size: 18px;
+    color: #4caf50; /* Green color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .icons-wrapper .icon:hover {
+    color: #388e3c; /* Darker green on hover */
+  }
+  
+  /* Dark Mode */
+  .task-manager.dark .icons-wrapper .icon {
+    color: #81c784;
+  }
+  
+  .task-manager.dark .icons-wrapper .icon:hover {
+    color: #66bb6a;
+  }
+  
+
+  .task-item {
+    display: flex;
+    justify-content: space-between; /* Space between text and icons */
+    align-items: center; /* Align items vertically */
+    padding: 10px 0;
+  }
+  
+  .task-text {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-icon {
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+    margin-left: 10px; /* Space between task text and star icon */
+  }
+  
+  .star-icon.highlight {
+    color: black; /* Highlighted color for important tasks */
+  }
+  
+  .task-item input {
+    margin-right: 10px; /* Space between checkbox and text */
+  }
+  
+  .important {
+    font-weight: bold;
+    color: #333;
+  }
+
+
+  /*hello
+  */
+  
+  /* General Styles */
+.task-manager {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .add-task-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .task-list, .completed-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* .task-item:hover {
+    background-color: #f9f9f9;
+  } */
+  
+  .star-icon {
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .star-icon.highlight {
+    color: gold;
+  }
+  
+  .right-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background-color: #f4f9f4;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif;
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right-sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .sidebar-options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .option .icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .notes {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+  }
+  
+  .created-text {
+    font-size: 14px;
+    color: #555;
+    margin-top: auto;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .right-sidebar .close-btn:hover {
+    color: red;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .task-manager {
+      padding: 10px;
+    }
+  
+    .add-task-bar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .task-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    .task-item .star-icon {
+      margin-top: 10px;
+    }
+  
+    .right-sidebar {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+      padding: 15px;
+      box-shadow: none;
+    }
+  
+    .right-sidebar h2 {
+      font-size: 20px;
+    }
+  
+    .sidebar-options {
+      margin-top: 20px;
+    }
+  
+    .option {
+      font-size: 14px;
+    }
+  
+    .notes {
+      height: 100px;
+    }
+  
+    .close-btn {
+      top: 15px;
+      right: 15px;
+      font-size: 25px;
+    }
+  
+    .created-text {
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .task-manager {
+      padding: 10px 5px;
+    }
+  
+    .task-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    .task-item .star-icon {
+      margin-top: 8px;
+    }
+  
+    .right-sidebar {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .right-sidebar h2 {
+      font-size: 18px;
+    }
+  
+    .sidebar-options {
+      margin-top: 10px;
+    }
+  
+    .option {
+      font-size: 12px;
+    }
+  
+    .notes {
+      height: 120px;
+    }
+  
+    .close-btn {
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+    }
+  
+    .created-text {
+      font-size: 10px;
+      margin-top: 15px;
+    }
+  }
+  
